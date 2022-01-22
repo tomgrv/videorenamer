@@ -1,0 +1,25 @@
+[
+
+  {
+    "step_title": "whattimetorun",
+    "items": [
+
+      {
+        "type": "textfield",
+        "desc": "Video Renamer va <b>CHAQUE JOUR</b> vérifier et renommer si nécessaire votre fichier vidéo basé sur Synology Video Station. <br/> Veuillez saisir l'heure à laquelle vous souhaitez programmer.",
+        "subitems": [
+          {
+            "key": "HourToRun",
+            "desc": "(Heure de 0 à 23)",
+            "defaultVaule": "default",
+            "validator": {
+              "allowBlank": false,
+              "minLength": 1,
+              "maxLength": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

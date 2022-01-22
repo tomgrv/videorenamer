@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get the upload URL for a release
+      id: get_release
+      uses: bruceadams/get-release@v1.2.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Get the version (git tag)
+      id: get_version
+      run: |
+        echo ${GITHUB_REF/refs\/tags\//}
+        echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+    - name: Setup Toolchain
+      run: |
+        sudo -E ${GITHUB_WORKSPACE}/.ci/setup-toolchain.sh
+
+    - name: Build Package
+      run: |
+        sudo -E ${GITHUB_WORKSPACE}/.ci/build-package.sh
+      env:
+        SPK_PACKAGE_VERSION: ${{ steps.get_release.outputs.tag_name }}
+
+    - name: Upload SPK To Release
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release.outputs.upload_url }}
+        asset_path: ${GITHUB_WORKSPACE}/videorenamer-${{ steps.get_release.outputs.tag_name }}.spk
+        asset_name: videorenamer-${{ steps.get_release.outputs.tag_name }}.spk
+        asset_content_type: application/octet-stream

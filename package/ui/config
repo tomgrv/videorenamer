@@ -1,0 +1,10 @@
+{
+	".url": {
+		"SYNO.SDS.VideoRenamer": {
+			"type": "legacy",
+			"title": "Video Renamer",
+			"icon": "images/icon_{0}.png",
+			"url": "/webman/3rdparty/VideoRenamer/index.cgi"
+		}
+	}
+}

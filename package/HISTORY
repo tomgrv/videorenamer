@@ -1,0 +1,530 @@
+FEATURE TO COME
+	- add languages available in filename
+KNOWN BUGS
+	- when conf changed via GUI the old conf appears after pressing save button (but good conf is still sent)
+	- subtitles not renamed when filename is too long
+	- after manual run conf does not display
+	- last tvshows renamed not displayed correctly in mail
+
+Version 19.1229
+	- added * as a NotAdvisedSpecialCharacters
+Version 19.1223
+	- added more log
+Version 19.1220
+	- corrected tvshow search that could lead to longer execution
+Version 19.1213
+	- added TTML & VTT files
+	- corrected blank at end of additional files when named as video file
+Version 19.1126
+	- corrected error in notification when no last changes occured
+	- added check in case tvshows ar missing episode et season number
+	- changed summary location to avoid text error before episode and season selection
+Version 19.1011
+	- added " to NotAdvisedSpecialCharacters
+Version 19.0517
+	- corrected VR_OLD_PATH double quote db issue
+	- ']' correction in sendnotification.sh
+Version 19.0331
+	- added nfo file rename
+Version 19.0330
+	- added idf and sub file rename
+	- corrected .ass .sami .smi .srt .ssa debug file
+Version 19.0328
+	- corrected debug empty folder deletion
+Version 19.0325
+	- better delete empty folder log
+Version 19.0319
+	- full scan reset not working in some cases
+	- delete empty folder debug log  more verbose
+Version 19.0318
+	- manual run correction
+	- full scan reset only when filename changes are made to conf
+Version 19.0317
+	 - added log to deleted empty folder for debug
+Version 19.0316
+	- added lib_path in db
+	- lib_path filled when video renamed
+	- correction for manual run button
+	- option to delete empty folders found in libraries
+Version 19.0315
+	- minor text correction
+	- when conf changed -> a full scan will apply on next schedule
+	- avoid manuel run for first run
+	- in some cases DSM notification not working
+Version 19.0212
+	- if error could happen making routine not run
+Version 19.0211
+	- corrected new install conf error
+Version 19.0209
+	- forced movie folder to be in decade folder when this option is selected
+	- decade sort will activate folder management
+	- check if year exist for decade sorting
+	- none existing year in movies or tvshows is now set to 0000
+	- tvshow can now also be sorted by decades
+Version 19.0208
+	- movies can be sorted by decades (great for large video libraries)
+Version 19.0204
+	- no date in tvshow folder if date = 0
+Version 19.0130
+	- tvshow folder do not have duplicat date if already present
+	- corrected season folder naming that could be missing in some cases
+Version 19.0129
+	- added date in tvshow folder to avoid duplicates with serie reboots
+Version 18.1105
+	- correction with last renamed tvshow display in mail
+Version 18.1010
+	- correction with last count display not showing in some cases
+Version 18.1009
+	- last action count displayed in mail only for cycle mode
+Version 18.1008
+	- added last action count and daily count
+Version 18.1005
+	- changed mail notifications to avoid multiple mails when cycle run activated
+Version 18.1004
+	- change run hour display when cycle run selected
+Version 18.1003
+	- added cycle run (runs every 6 hours)
+Version 18.0907
+	- corrected language detection for some tvshows
+Version 18.0904
+	- added manuel run button
+Version 18.0726
+	- added new path in mail notification
+	- corrected subtitle renaming to avoid duplicat name in filename
+	- subtitles can now also be canceled
+Version 18.0724
+	- last renaming can now be canceled if folder mangement was activated
+Version 18.0723
+	- corrected special character issue in folder creation
+Version 18.0722
+	- vr_new_path not being saved to db in some cases
+Version 18.0721
+	- corrected VR_OLD_PATH value making folder not beeing deleted sometimes
+	- empty folder hat contains hidden @eaDir are now deletes
+Version 18.0720
+	- added debugging because some folders where not deleted
+Version 18.0718
+	- folder can be created for already renamed files
+Version 18.0716
+	- detection of library folder to avoid NEW_PATH issues when video file is not in a folder
+	- corrected season variable to allow folder creation for each season
+	- empty folders are now deleted when file is moved
+	- corrected confchecker value
+Version 18.0715
+	- changed some language detection for tvshow folder creation
+Version 18.0714
+	- corrected subtitle file renaming when moved to a new folder
+	- corrected is_renamed db issue
+Version 18.0713
+	- corrected not null value for title_checker in previous versions
+	- corrected movie_file db warning from V18.0703
+Version 18.0712
+	- corrected mail subject
+	- cancellastjob.sh could not mv file when 2 blanks are in path
+	- VSMETA and subtitles can now also be canceled
+	- added vr_new_path in db
+	- corresponding Folders can be created to fit filename
+Version 18.0706
+	- added vr_old_path to DB
+	- cancellastjob.sh could not update db path when 2 blanks are in path
+Version 18.0703
+	- cleanup for publication
+Version 18.0702
+	- title checker did not work in some cases for tvshow episodes
+	- title checker now not null
+Version 18.0626
+	- new_filename now work with id when duplicate file
+Version 18.0624
+	- old_filename now compared to path filename
+Version 18.0623
+	- old_filename filed during installation
+Version 18.0622
+	- added new_filename and old_filename to avoid double white space in path
+Version 18.0617
+	- debug separation between each files
+	- double space issue when comparing newfilename
+Version 18.0616
+	- corrected some var errors in debug output
+	- integer expression corrected
+Version 18.0615
+	- change max renamed files to 60 for mail notifications
+Version 18.0614
+	- logextraction does now also extract tvshows
+	- corrected installation schedule bad behavior when updating from version before 18.0502
+	- corrected DB installation for renamed_path
+	- corrected DB installation for dar_resolution_x
+Version 18.0613
+	- install log correction path on sql updates
+	- video_metadata path correction
+	- sql db correction
+	- last_renamed_date type change correction
+Version 18.0611
+	- debug display changes
+Version 18.0608
+	- conf not set up in GUI after last changes
+	- corrected extract db rigths
+	- debug log output corrections
+	- last_renamed_date not always added in DB
+	- when movies and tvshows renamed display in mail notification is not correct when codec removed
+	- when more then 50 file renamed the mail is sent with all details and should not
+Version 18.0607
+	- check if var are set before running var.sh
+	- corrected var path
+Version 18.0606
+	- correction on sendnotification debug
+	- GUI bug fix
+	- added mapper_checker to allow video's to be renamed after a correction in video station (full rescan needed)
+	- added tvshow_episode to debug extract DB
+	- log extraction permission correction
+	- install log on postinst and all sql updates
+Version 18.0605
+	- better debug on sendnotification
+	- better debug on cancelastjob
+Version 18.0601
+	- correction for filename already renamed but have filename too long
+	- a full rescan might happen in the upgrade according to number of videos renamed before V18.0502
+	- mail notifiation correction to avoid errors when no renamed video file
+	- vsmeta could not be renamed if filename was just under the max character limit
+Version 18.0531
+	- corrected start status to avoid auto restart
+	- old comments clean up
+	- in case filename is too long supression of EpisodeName and/or ResolutionNaming and/or Resolutions and/or Codecs in filename
+Version 18.0529
+	- corrected filename with ID treatment (duplicate file)
+Version 18.0528
+	- corrected log extraction to last renamed list instead of last task list
+	- minor ui text change
+Version 18.0527
+	- corrected log extraction path
+	- corrected package status when duplicat crontab exist
+Version 18.0525
+	- corrected permission on /tmp/VideoRenamer/
+	- corrected NOW var positionning
+Version 18.0522
+	- new screenshots
+	- no more date in mail notification
+Version 18.0518
+	- crontab not correctly updated from version 18.0507
+	- Binary file (standard input) matches results on some files
+	- added db extract in debug mode
+	- added security to avoid canceling jobs that haven't been renamed
+	- change some file permissions (new Toolkit version)
+Version 18.0517
+	- cancellastjob can now cancel the last renamed job whenever it whas done
+	- replaced start and stop time by duration in resuming mail
+Version 18.0516
+	- corrected logmaxsize issue
+	- corrected log path for sendnotification
+	- log backup when updating version
+	- added debug mode
+Version 18.0515
+	- corrected renamed count display in mail notifications
+	- Log generation now working (replacing videorenamed.log in video folder)
+	- history display correction in GUI
+	- cancel last job is now possible (see help)
+	- minor bug fix
+	- removed some old files not needed anymore
+Version 18.0514
+	- notification correction when more then 50 files renamed
+	- GUI correction to work with new scripts folder
+	- sendnotification changed to start using DB changes
+	- video counts are now done via DB
+	- removing old conf file if exist with past versions
+Version 18.0513
+	- speed optimisation with SQL queries
+Version 18.0509
+	- script cleanup and bug fix
+Version 18.0508
+	- added resolution_naming column to optimise speed while searching for resolutions
+	- added control for renamed_path add in DB when file doesn't need to be renamed
+Verison 18.0507
+	- corrected column creation at install
+	- changed display of resume when no tvshows or movies exist in DB
+Version 18.0504
+	- execution check now based on path to avoid skipping manually renamed files
+	- corrected single ' in path when saved to DB
+Version 18.0503
+	- only unmatching names are now scanned
+	- matching_names are reset every conf modification
+	- new DB column added and removed in package installation
+	- speed optimisation
+	- full scan will now run every conf change
+Version 18.0502
+	- added 5 columns in VideoStation DB for future option and optimisation
+Version 18.0501
+	- best resolution chosen for naming (DS Video naming fitting)
+Version 18.0430
+	- DAR operation is now integer
+	- resolution detection adjustements
+	- VR_APP_TMP_PATH correction
+	- corruptednbr check to avoid first error
+	- VideoNbr check to avoid notifications
+Version 18.0427
+	- DAR resolution implemented
+Version 18.0426
+	- var correction with exit code and resume count
+Version 18.0425
+	- SAR and DAR detection
+	- moved error log to tmp folder
+	- added check to avoid error in case no video files exist in a library
+	- resume notification now only have renamed file type
+Version 18.0423
+	- minor resolution adjustements
+	- notification now limited to 50 renamed video to avoid long mail error
+Version 18.0421
+	- 480p, 720p and 1080p resolution naming are now the same as video station
+Version 18.0416
+	- minor bug fix for long filename logging
+Version 18.0413
+	- files with long path name now logged
+	- correction for mv error code
+Version 18.0412
+	- corrupted video count could miss count if tvshows and movies where corrupted
+Version 18.0410
+	- corrected rights on scripts
+	- corrected notification count
+Version 18.0409
+	- added screenshots
+	- corrupted tvshows where not counted
+	- corrected rights on tmp files
+Version 18.0405
+	- title that had 2 blanks in a row now only have 1
+	- corrupted files are not renamed and logged
+	- notifications are now seperated for movies, tvshows and corrupted files
+Version 18.0320
+	- when more then one subtitle file exist they are also renamed
+	- in subtitle filename, comments behind are kept (usually language indentification)
+Version 18.0315
+	- in some cases vsmeta and subtitles where not renamed
+Version 18.0314
+	- rename subtitle when exist (.ass, .sami, .smi, .srt, .ssa) if subtitle filename is the same as video filename
+	- change 720 Resolution X settings to 1150 (instead of 1280)
+Version 18.0309
+	- changed 1080 Resolution X settings to 1200 (instead of 1280)
+	- changed 720 Resolution Y settings to 500 (instead of 720)
+Version 18.0302
+	- DB_ID check bug correction appeared in 18.0301
+Version 18.0301
+	- file renamed with DB_ID ar now renamed again when file without DB_ID no more present in same folder
+	- correction in rename identification check
+	- changed 720 Resolution Y settings to 536 (instead of 720)
+Version 18.0126
+	- log extraction function (download option not yet available)
+	- GUI button correction
+Version 18.0115
+	- display warning in GUI if app is running
+Version 18.0111
+	- notifications where sometimes sent when no files renamed
+	- 0 time schedule are now accepted
+Version 18.0110
+	- notifications now only sent when videos renamed
+Version 18.0108
+	- notification is now an option
+	- DSM notification now possible
+	- better option menu
+	- conf file checker to avoid loosing conf when new options are added in package
+	- for better evolution default app conf file not backed up
+Version 18.0105
+	- css style change
+Version 18.0104
+	- Default page for GUI
+Version 18.0103
+	- renamed files are now logged into mail notification
+	- reset app now possible with stop/start in package center
+	- in some cases GUI is not opening
+	- new resume layout
+Version 18.0102
+	- minor mail notification bug fix
+	- sometimes logs are lost while copied to bkp
+Version 18.0101
+	- mail notification for resume
+Version 17.1231
+	- log max size in GUI
+	- Conf file no more available (GUI only)
+	- move old conf file when present in video folder
+	- default conf path error
+	- default Max log size not showing in GUI
+Version 17.1230
+	- corrected in backup conf issue when upgrading from last public version
+	- running time should always display in GUI
+Version 17.1229
+	- GUI seems to rerun and change runtime with blank when left open
+	- time should always display in GUI
+	- options can now be changed in GUI
+	- correction of ACL modification on conf file when using GUI
+Version 17.1228
+	- start stop status based on crontab
+	- GUI working in legacy mode
+	- multiple launch when it take too much time (big libraries)
+	- limit time input in GUI from 1 to 23
+Version 17.1222
+	- check all file size in app tmp
+	- add start time log in app tmp
+	- correction with 0 minute bug
+	- cron not restarted after schedule change
+	- unknown running time for old versions (must uninstall to have it work again)
+	- no run time set in GUI after upgrading app
+	- waiting command error on Function_Check_File_Size
+	- renamed count is not ok in GUI
+	- bug correction on backup restore
+Version 17.1221
+	- error ligne 49 index.cgi
+	- running time can now be changed via GUI
+	- in-app /tmp/ path
+	- backup tmp file
+	- backup cfg files (to not loose conf when install/uninstall/update)
+	- correction for executable files at install
+	- schedule bug at uninstall (tmp file must be emptied before installing again)
+	- post install correction
+	- add remove tmp and conf option at uninstall
+Version 17.1219
+	- configuration time not showing correctly in GUI
+	- app set up for complex schedule (future option)
+Version 17.1218
+	- Resume not running in some cases
+	- End time not displaying in resume
+	- total movies and total tvshows not displaying in resume
+	- Changelog displaying in GUI
+	- Resume displaying in GUI
+	- sometimes movies and tvshows are done at the same time (log 11-12)
+Version 17.1217
+	- resume script now standalone
+	- var script now standalone
+Version 17.1216
+	- when no space selected and path folder has a space mv will not work because full path treated with no space
+	- resume file (script duration, nbr renamed, nbr of files, nbr movies, nbr tvshows)
+	- resume file build in app tmp folder
+Version 17.1215
+	- added check if error when move file 
+	- resume file to display number of renamed videos
+	- sometimes, TVshows and movies where renamed at the same time
+	- GUI now ready for conf option and resume
+	- bug correction for AddResolutionNaming SD
+	- bug correction of bkp log when it doesnt exist
+	- bug correction with resume file
+Version 17.1214.b1543
+	- new history thumb
+	- use of wildcard to control duplicat file with " - " and ".-." before DB_ID
+Version 17.1213
+	- creation of a kill switch
+	- db access ordered by title for clearer log
+	- control to avoid multiple run
+	- minimim lenght correction for setting hour at install
+	- when identical file are in the same folder, they are renamed at every run
+	- duplicat file not well changed in DB when renamed " - " and ".-."
+	- added new thumbs to default page
+Version 17.1212
+	- changed INFO description
+	- better check for good renaming to avoid duplicat work on file
+Version 17.1211.b1656
+	- added package shortcut on desktop
+	- first GUI window
+	- shortcut images made
+Version 17.1211.b1058
+	- conf file now available before first run
+	- bug in log displaying empty renamed file in some cases (check no DB_ID)
+	- DB_ID check to make the script faster if no file
+	- in some cases video file is renamed multiple time (DeleteAuthorizedSpecialCharacters)
+	- first install now available in Fre and Ger
+Version 17.1208
+	- summary not gathering correctly for language selection in movies
+	- now works on DSM 6.1.4
+	- when DeleteAuthorizedSpecialCharacters is set to 1 serie might have no episode name
+Version 17.1207
+	- "/" replaced with "-"
+	- "ß" replaced with "ss"
+	- Automatic language detection (thanks to Pierre-Jean BELLAVOINE)
+	- if vsmeta file exist rename it
+	- bug correction in summary gathering for movie 
+Version 17.1206
+	- minor text changes
+	- default "&" set to english
+Version 17.1205
+	- First offcial release
+	- bug on the logs option when one is set to 0
+	- now not displaying year when it is not available
+	- temp folder not created when /tmp/ emptied
+	- when TVSHow had no episode name and no date a "-" appeared
+	- package now works for FR, US and DE ("&" replacement)
+Version 17.1204
+	- debug TVShow episode date 
+	- can now work if Video Station is on any volume
+	- logs are now an option
+	- option to have max logfile size
+	- when tvshows have no title remove empty space
+	- bug if /tmp/VideoRenamer did not exist when no log set
+Version 17.1201
+	- package install failure in some cases (postupgrade)
+	- date and video type not showing properly in notrenamed log 
+	- TVShow episode date is now the year the episode is available
+Version 17.1130
+	- Scheduled Hour asked at installation
+	- schedule job was lost when package update
+	- change DB_ID naming when double file exist " - " instead of "_"
+Version 17.1129
+	- seperate log for renamed/not renamed file
+	- scheduled to run everyday (12AM)
+	- delete schedule on stop
+	- seperate zone for TVShows or Movies not working correctly on renamed and not renamed log
+Version 17.1128
+	- TVshow  function correction
+	- correction with unclosed if in FileExistCheck
+	- function not closed in main script
+	- var correction in main script
+	- correction for tvshow saison greater then 9
+	- changed date layout in filename for TVshow
+	- seperate zone in log for Movies and TVShows
+Version 17.1127
+	- resolution name detection changed for SD
+	- resolution name script exctracted
+	- filename layout script exctracted
+	- filename cleaning script exctracted
+	- minor corrections
+	- TVshow functions started
+Version 17.1117
+	- changing version number
+	- change file path to work in package
+	- first package tested
+	- added temp icon
+	- changed log path to /volume1/video
+	- changed conf file path to /volume1/video
+	- to reset conf file just delete it. a default file will be created
+	- conf file more explicit
+Version 11.9.6
+	- Changing run method and var to set as synology packaging method
+	- added (240p and 360p)
+Version 11.9.5
+	- "Resolution common name" bug when filename already exist and with #
+Version 11.9.4
+	- avoid overwritting files when 2 movies are identical (adds DB_ID to the filename)
+	- DB_ID after filename now considered as good naming
+	- removed ".." when no spaces chosen in title 	
+	- extensions appeared twice in some cases
+	- new file name wrong in log when filename already exist
+	- added Resolution common name (SD, 480p, 720p, 900p, 1080p, 1440p, 4K, 5K, 8K)
+Version 11.9.3
+	- when title contained 2 spaces file could not be renamed 
+	- comments cleaning
+Version 11.9.2
+	- log file correction
+	- when title contained quotes the renamed path could not be changed in DB
+	- remove old check functions now useless
+Version 11.9.1
+	- added the Changelog file
+	- starting to set up script as a package
+Version 11.9
+	- creation of a conf file
+	- correction of a non-printable character that could not be deleted (M-BM-)
+	- main renaming function rewritten
+Version 11.8
+    - testing and small bug corrections
+Version 11.7
+    - added more character filtering
+Version 11.6
+    - added the choice to have a clean or original name
+Version 11.5
+    - Compatible with DSM 6.2
+Version 11
+	- admin user correction
+Version 1-10 (BUD77)
+	- Main script to rename video files

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#. /var/packages/VideoRenamer/scripts/common
+#. `dirname $0`/common
+
+PACKAGE_NAME="VideoRenamer"
+APP_TMP_PATH="/var/packages/$PACKAGE_NAME/target/tmp"
+
+
+exit 0

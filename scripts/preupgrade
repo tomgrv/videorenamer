@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. /var/packages/VideoRenamer/scripts/common
+#. `dirname $0`/common
+
+#if [ -e "$JOB_PATH/$JOB_FILENAME" ]; 
+#	then
+#		if [ ! -e "/tmp/$PACKAGE_NAME/" ]; 
+#			then
+#				mkdir -p "/tmp/$PACKAGE_NAME/"
+#		fi
+#		cp "$JOB_PATH/$JOB_FILENAME" "/tmp/$PACKAGE_NAME/$JOB_FILENAME"
+#fi
+
+# if old conf file exist move it to CFG folder
+if [ -e "/$VideoStationVolume/video/VideoRenamer.cfg" ];
+	then
+		mv "/$VideoStationVolume/video/VideoRenamer.cfg" "/$APP_TARGET_PATH/cfg/VideoRenamer.cfg"
+fi
+
+DO_BACKUP && # a virer dans la prochaine version
+exit 0

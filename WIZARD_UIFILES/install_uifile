@@ -1,0 +1,25 @@
+[
+
+  {
+    "step_title": "What time to run",
+    "items": [
+
+      {
+        "type": "textfield",
+        "desc": "Video Renamer will <b>EVERY DAY</b> check and rename if necessary your video file based on Synology Video Station.<br/>Please type in the time you wich to schedule.",
+        "subitems": [
+          {
+            "key": "HourToRun",
+            "desc": "(Hour from 0 to 23)",
+            "defaultVaule": "default",
+            "validator": {
+              "allowBlank": false,
+              "minLength": 1,
+              "maxLength": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

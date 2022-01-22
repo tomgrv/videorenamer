@@ -1,0 +1,15 @@
+#!/bin/sh
+
+. /var/packages/VideoRenamer/scripts/common
+#. `dirname $0`/common
+
+#if [ -e "/tmp/$PACKAGE_NAME" ]; 
+#	then
+#		rm -rf "/tmp/$PACKAGE_NAME"
+#fi
+
+if [ "$pkgwizard_remove_config" = "true" ]; then
+	rm -rf "/tmp/$PACKAGE_NAME/"
+fi
+
+exit 0

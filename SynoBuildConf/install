@@ -1,0 +1,37 @@
+#!/bin/bash
+# Copyright (c) 2000-2021 Synology Inc. All rights reserved.
+
+# set include projects to install into this package
+INST_DIR="/tmp/_videorenamer"      # temp folder for dsm files
+PKG_DIR="/tmp/_videorenamer_pkg"   # temp folder for package files
+PKG_DEST="/image/packages"
+
+# prepare install and package dir
+for dir in $INST_DIR $PKG_DIR; do
+        rm -rf "$dir"
+done
+for dir in $INST_DIR $PKG_DIR $PKG_DEST; do
+        mkdir -p "$dir" # use default mask
+done
+
+[ -d $INST_DIR/ui ] || install -d $INST_DIR/ui
+cp -a ui/* $INST_DIR/ui
+
+[ -d $INST_DIR/app ] || install -d $INST_DIR/app
+cp -a app/* $INST_DIR/app
+
+[ -d $PKG_DIR ] || install -d $PKG_DIR
+[ -d $PKG_DIR/scripts ] || install -d $PKG_DIR/scripts
+cp -a conf $PKG_DIR
+cp -a scripts/* $PKG_DIR/scripts
+chmod 755 $PKG_DIR/scripts/*
+
+cp -av PACKAGE_ICON*.PNG $PKG_DIR
+
+./INFO.sh > INFO
+
+install -c -m 644 INFO $PKG_DIR
+
+. "/pkgscripts-ng/include/pkg_util.sh"
+pkg_make_package $INST_DIR $PKG_DIR
+pkg_make_spk $PKG_DIR $PKG_DEST

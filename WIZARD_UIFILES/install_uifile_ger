@@ -1,0 +1,25 @@
+[
+
+  {
+    "step_title": "whattimetorun",
+    "items": [
+
+      {
+        "type": "textfield",
+        "desc": "Video Renamer wird <b>JEDEN TAG</b> überprüfen und umbenennen, wenn nötig Ihre Videodatei basierend auf der Synology Video Station. <br/> Bitte geben Sie die Zeit ein, die Sie einplanen möchten.",
+        "subitems": [
+          {
+            "key": "HourToRun",
+            "desc": "(Uhr von 0 bis 23)",
+            "defaultVaule": "default",
+            "validator": {
+              "allowBlank": false,
+              "minLength": 1,
+              "maxLength": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

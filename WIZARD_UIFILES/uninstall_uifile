@@ -1,0 +1,11 @@
+[{
+	"step_title": "Remove configuration",
+	"items": [{
+		"type": "multiselect",
+		"desc": "The configuration will be permanently removed and can not be recovered after deletion.",
+		"subitems": [{
+			"key": "pkgwizard_remove_config",
+			"desc": "Remove configuration"
+		}]
+	}]
+}]
