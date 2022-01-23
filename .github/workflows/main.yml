@@ -11,6 +11,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Get package name from repo
+      id: get_name
+      run: |
+        echo '${{ github.repository }}' | awk -F '/' '{print $1}'
+        echo ::set-output name=SPK_NAME::$(echo '${{ github.repository }}' | awk -F '/' '{print $1}')
+      shell: bash
+
     - name: Get the upload URL for a release
       id: get_release
       uses: bruceadams/get-release@v1.2.1
@@ -31,6 +38,7 @@ jobs:
       run: |
         sudo -E ${GITHUB_WORKSPACE}/.ci/build-package.sh
       env:
+        SPK_PACKAGE_NAME: ${{ steps.get_name.outputs.spk_name }}
         SPK_PACKAGE_VERSION: ${{ steps.get_release.outputs.tag_name }}
 
     - name: Upload SPK To Release
@@ -39,6 +47,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }}
-        asset_path: ${GITHUB_WORKSPACE}/videorenamer-${{ steps.get_release.outputs.tag_name }}.spk
-        asset_name: videorenamer-${{ steps.get_release.outputs.tag_name }}.spk
+        asset_path: ${GITHUB_WORKSPACE}/${{ steps.get_name.outputs.spk_name }}-${{ steps.get_release.outputs.tag_name }}.spk
+        asset_name: ${{ steps.get_name.outputs.spk_name }}-${{ steps.get_release.outputs.tag_name }}.spk
         asset_content_type: application/octet-stream

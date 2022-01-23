@@ -1,13 +1,3 @@
 #!/bin/sh
 
-. /var/packages/VideoRenamer/scripts/common
-#. `dirname $0`/common
-
-#if [ -e "/tmp/$PACKAGE_NAME/$JOB_FILENAME" ]; 
-#	then 
-		#rm -rf "/tmp/$PACKAGE_NAME/"
-#		echo "OK"
-#fi
-
-
 exit 0

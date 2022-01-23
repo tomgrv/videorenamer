@@ -1,38 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
-. /var/packages/VideoRenamer/scripts/common
-#. `dirname $0`/common
-
-
-CronTabCheckVar="$( grep -c $timer_scriptname /etc/crontab )"
-
-case $1 in
-start)
-	if [[ "$CronTabCheckVar" -ge "1" ]];
-		then
-			DO_REMOVE_CRON_TASK 
-	fi
-	DO_ADD_CRON_TASK
-	DO_CHECK_CONF_FILE
-	if [ -e "$APP_TMP_PATH/START" ];
-		then 
-			rm -f "$APP_TMP_PATH/START"
-	fi
-	exit 0
-;;
-stop)
-	DO_REMOVE_CRON_TASK
-	exit 0
-;;
-status)
-	if [ -z "$CronTabCheckVar" ];
-		then 
-			exit 1
-		else
-			exit 0
-	fi
-;;
-log)
-	#echo "/var/packages/VideoRenamer/target/log"
-;;
+case "$1" in
+    start)
+	synosystemctl start ${SYNOPKG_PKGNAME}
+        ;;
+    stop)
+	synosystemctl stop ${SYNOPKG_PKGNAME}
+        ;;
+    status)
+        ;;
+    log)
+        echo ""
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status}" >&2
+        exit 1
+        ;;
 esac
+
+exit 0

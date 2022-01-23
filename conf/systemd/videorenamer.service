@@ -1,0 +1,6 @@
+[Unit]
+Description=VideoRenamer
+
+[Service]
+Type=oneshot
+ExecStart=/var/packages/VideoRenamer/target/scripts/videorenamer.sh
